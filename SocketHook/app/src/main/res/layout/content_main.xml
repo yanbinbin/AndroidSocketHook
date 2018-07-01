@@ -11,5 +11,15 @@
     <WebView
         android:id="@+id/webview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="320dp"/>
+
+    <Button
+        android:id="@+id/btn_hook_click_listener"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/webview"
+        android:layout_marginTop="20dp"
+        android:text="Hook click"/>
+
+
 </RelativeLayout>

@@ -10,7 +10,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
+import android.widget.Button;
+import android.widget.Toast;
 
+import com.codelogic.sockethook.javahook.ClickListenerHook;
 import com.codelogic.sockethook.network.monitor.MonitorSocketFactory;
 
 import java.io.IOException;
@@ -87,7 +90,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initUI() {
+        // Hook socket
         WebView webView = (WebView)findViewById(R.id.webview);
         webView.loadUrl("http://www.qq.com/");
+
+        // Hook click listener
+        Button btnHookClick = (Button) findViewById(R.id.btn_hook_click_listener);
+        btnHookClick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "点击了", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        ClickListenerHook.getInstance().hookOnClickListener(btnHookClick);
     }
 }

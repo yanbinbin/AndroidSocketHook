@@ -1,0 +1,9 @@
+# Gradle files
+.gradle/
+build/
+.idea
+app/build/*
+app/build
+app/maindexlist.txt
+core/build
+core/build/*
